@@ -1,3 +1,11 @@
+For å få appen til å kjøre på local machine:
+
+1.git clone https://github.com/Ingvildk/oslobysykkel
+2. npm install
+3. npm start
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
