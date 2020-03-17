@@ -1,5 +1,3 @@
-import {stasjon} from "../mock/stasjon";
-import {tilgjengelighet} from "../mock/tilgjengelighet";
 import axios from "axios";
 
     async function getStations() {
@@ -12,7 +10,7 @@ import axios from "axios";
     async function getAvailability() {
         const response =
             await axios.get("https://gbfs.urbansharing.com/oslobysykkel.no/station_status.json",
-                { headers: {'Content-Type': 'application/json' }});
+                { headers: {'Content-Type': 'application/json'}});
         return(response.data);
     }
 
@@ -39,14 +37,11 @@ import axios from "axios";
     function getData() {
         let data;
         data = getStations().then(stations => {
-            getAvailability().then(spots => {
+            return getAvailability().then(spots => {
                 return matchStationWithAvailability(stations.data.stations, spots.data.stations);
-            })
+            });
         });
         return data;
-        // stations = getStations().then(res => {return (res.data.stations);});
-        // availability = getAvailability().then(res => {return ((res.data.stations))});
-        // return matchStationWithAvailability(stations, availability);
     }
 
 export { getData };

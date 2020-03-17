@@ -13,11 +13,6 @@ const ElementWrapper =  styled.p`
     width: 20%
 `;
 
-const TitleWrapper = styled(ElementWrapper)`
-    font-weight: 500;
-
-`;
-
 const StationWrapper = styled.div`
     display: flex;
     flex-direction: row;
@@ -33,10 +28,15 @@ export default class OsloBySykkel extends React.Component {
   }
 
   componentDidMount() {
-      getData().then(res => {
-          console.log(res);
-          this.setState({sykkelData: res})});
+      setInterval(() => {
+          getData().then(res => {
+            this.setState({sykkelData: res})})},
+          10000)
+
+    getData().then(res => {
+        this.setState({sykkelData: res})});
   }
+
 
   render() {
       let bicycleData;
@@ -56,7 +56,7 @@ export default class OsloBySykkel extends React.Component {
           <StationWrapper>
             <ElementWrapper>Address</ElementWrapper>
             <ElementWrapper>Docks</ElementWrapper>
-            <ElementWrapper>Available Bikes</ElementWrapper>
+            <ElementWrapper>Available bikes</ElementWrapper>
           </StationWrapper>
             {bicycleData}
         </ApplicationWrapper>
