@@ -6,6 +6,9 @@ For å få appen til å kjøre på local machine:
 
 
 
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
