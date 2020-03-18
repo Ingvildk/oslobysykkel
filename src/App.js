@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import { getData} from './utils/getBicycleData';
 import styled from "styled-components";
 
