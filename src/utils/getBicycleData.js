@@ -22,12 +22,12 @@ import axios from "axios";
                 const matchAvail = availability.find(el => {
                     return (station.station_id === el.station_id);
                 });
-                let tempObj = {
+                let displayObj = {
                     "address": station.address,
                     "docks": matchAvail.num_docks_available,
                     "available": matchAvail.num_bikes_available
                 };
-                bicycleData.push(tempObj);
+                bicycleData.push(displayObj);
             });
         }
 
