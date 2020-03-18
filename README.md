@@ -1,8 +1,9 @@
 For å få appen til å kjøre på local machine:
 
 1.git clone https://github.com/Ingvildk/oslobysykkel
-2. npm install
-3. npm start
+2. cd inn i folderen
+3. npm install
+4. npm start
 
 
 
